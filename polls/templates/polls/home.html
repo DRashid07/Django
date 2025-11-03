@@ -1,0 +1,24 @@
+{% extends "polls/base.html" %}
+{% block title %}Xoş gəldiniz — Layihə İşləyir{% endblock %}
+{% block content %}
+  <h1>🎉 Layihən uğurla işləyir!</h1>
+  <p class="muted">Django konfiqurasiyası qaydasındadır. Aşağıdakı keçidlərlə davam edə bilərsiniz.</p>
+
+  <div class="panel" style="margin-top:14px;">
+    <h2>Başlamaq üçün</h2>
+    <p>
+      <a class="btn primary" href="{% url 'polls:index' %}">Sorğulara keç</a>
+      <a class="btn" href="/admin/">Admin paneli</a>
+    </p>
+    <p class="muted">Sorğular bölməsində ən son sualların siyahısını və səsverməni tapa bilərsiniz.</p>
+  </div>
+
+  <div class="panel" style="margin-top:14px;">
+    <h2>Layihə haqqında</h2>
+    <ul class="list">
+      <li><strong>Framework:</strong> <span class="muted">Django</span></li>
+      <li><strong>App:</strong> <span class="muted">polls</span></li>
+      <li><strong>Stil:</strong> <span class="muted">`polls/static/polls/styles.css`</span></li>
+    </ul>
+  </div>
+{% endblock %}

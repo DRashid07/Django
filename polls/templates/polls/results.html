@@ -1,0 +1,18 @@
+{% extends "polls/base.html" %}
+{% block title %}Polls - Nəticələr{% endblock %}
+{% block content %}
+    <h1>{{ question.question_text }}</h1>
+    <div class="panel">
+        <ul class="list">
+        {% for choice in question.choice_set.all %}
+            <li><strong>{{ choice.choice_text }}</strong> <span class="muted">— {{ choice.votes }} səs</span></li>
+        {% empty %}
+            <li class="muted">Seçim yoxdur.</li>
+        {% endfor %}
+        </ul>
+        <p style="margin-top:12px;">
+            <a class="btn" href="{% url 'polls:detail' question.id %}">Yenidən səs ver</a>
+            <a class="btn" href="{% url 'polls:index' %}">Bütün sorğular</a>
+        </p>
+    </div>
+{% endblock %}

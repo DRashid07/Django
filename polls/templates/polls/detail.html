@@ -1,0 +1,32 @@
+{% extends "polls/base.html" %}
+{% block title %}Polls - Detal{% endblock %}
+{% block content %}
+    <h1>{{ question.question_text }}</h1>
+
+    {% if error_message %}
+        <p class="error"><strong>{{ error_message }}</strong></p>
+    {% endif %}
+
+    <div class="panel">
+    <form action="{% url 'polls:vote' question.id %}" method="post">
+        {% csrf_token %}
+        {% for choice in question.choice_set.all %}
+            <div class="field">
+                <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+                <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label>
+            </div>
+        {% empty %}
+            <p>Bu sorğu üçün seçim yoxdur.</p>
+        {% endfor %}
+        <p>
+            <button class="btn primary" type="submit">Səs ver</button>
+            <a class="btn" href="{% url 'polls:index' %}">Bütün sorğular</a>
+        </p>
+    </form>
+    </div>
+
+    <hr>
+    <div class="panel">
+        {% include "polls/_latest.html" %}
+    </div>
+{% endblock %}

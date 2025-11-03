@@ -1,0 +1,8 @@
+{% extends "polls/base.html" %}
+{% block title %}Polls - Sorğular{% endblock %}
+{% block content %}
+    <h1>Son yeniliklər</h1>
+    <div class="panel">
+        {% include "polls/_latest.html" %}
+    </div>
+{% endblock %}
