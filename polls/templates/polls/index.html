@@ -2,6 +2,9 @@
 {% block title %}Polls - Sorğular{% endblock %}
 {% block content %}
     <h1>Son yeniliklər</h1>
+    <div class="page-actions">
+        <a class="btn" href="{% url 'home' %}">Ana səhifəyə qayıt</a>
+    </div>
     <div class="panel">
         {% include "polls/_latest.html" %}
     </div>

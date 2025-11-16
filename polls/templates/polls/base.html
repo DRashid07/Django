@@ -12,6 +12,7 @@
         <div class="container header-inner">
             <a class="brand" href="{% url 'polls:index' %}">Polls</a>
             <nav class="nav">
+                <a href="{% url 'home' %}">Ana səhifə</a>
                 <a href="{% url 'polls:index' %}">Sorğular</a>
             </nav>
         </div>
@@ -23,7 +24,7 @@
 
     <footer class="site-footer">
         <div class="container">
-            <small>© {{ now|default:None|date:'Y' }} Polls</small>
+            <small>© {% now "Y" %} Polls</small>
         </div>
     </footer>
 </body>

@@ -19,8 +19,12 @@
             <p>Bu sorğu üçün seçim yoxdur.</p>
         {% endfor %}
         <p>
-            <button class="btn primary" type="submit">Səs ver</button>
+            <button class="btn primary vote-btn" type="submit">
+                <span aria-hidden="true">🗳️</span>
+                <span>Səs ver</span>
+            </button>
             <a class="btn" href="{% url 'polls:index' %}">Bütün sorğular</a>
+            <a class="btn" href="{% url 'home' %}">Ana səhifə</a>
         </p>
     </form>
     </div>

@@ -6,7 +6,7 @@ def home(request):
     return render(request, "polls/home.html")
 
 urlpatterns = [
-    path('', home),  # Ana səhifə
+    path('', home, name="home"),  # Ana səhifə
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
 ]
