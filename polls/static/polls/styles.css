@@ -54,11 +54,19 @@ small { color: var(--muted); }
   box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset, 0 10px 30px rgba(0,0,0,0.25);
 }
 
+
 ul.list { list-style: none; padding: 0; margin: 0; }
 ul.list li { padding: 12px 10px; border-bottom: 1px solid var(--ring); display: flex; align-items: baseline; gap: 8px; }
 ul.list li:last-child { border-bottom: 0; }
-ul.list a { color: var(--text); text-decoration: none; }
-ul.list a:hover { color: var(--brand); text-decoration: underline; }
+ul.list a { 
+  color: var(--brand); 
+  text-decoration: none; 
+  font-weight: 500;
+}
+ul.list a:hover { 
+  color: var(--brand); 
+  text-decoration: underline; 
+}
 
 .page-actions {
   display: flex;
